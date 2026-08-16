@@ -21,13 +21,13 @@ export function CtaSection({
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-wlyl-hero px-8 py-16 text-center sm:px-16">
+          <div className="grain relative overflow-hidden rounded-3xl bg-wlyl-hero px-8 py-16 text-center sm:px-16">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0 animate-gradient bg-[radial-gradient(circle_at_top,theme(colors.primary/.4),transparent_60%),radial-gradient(circle_at_bottom_right,theme(colors.brand-amber/.2),transparent_50%)]"
             />
             <div className="relative">
-              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white text-balance">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold tracking-tight text-white text-balance">
                 {title}
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-lg text-white/70 text-balance leading-relaxed">

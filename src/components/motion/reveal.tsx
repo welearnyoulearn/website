@@ -3,14 +3,14 @@
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import type { ReactNode } from "react";
 
-const easeOut = [0.16, 1, 0.3, 1] as const;
+const spring = { type: "spring" as const, stiffness: 140, damping: 18, mass: 0.9 };
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: easeOut },
+    transition: spring,
   },
 };
 
@@ -38,7 +38,7 @@ export function Reveal({
       whileInView="visible"
       viewport={{ once: true, margin: "0px 0px 100px 0px" }}
       variants={reduceMotion ? staticVariants : variants}
-      transition={{ duration: 0.6, ease: easeOut, delay }}
+      transition={{ ...spring, delay }}
       className={className}
     >
       {children}
