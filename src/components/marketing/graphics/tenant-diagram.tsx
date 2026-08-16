@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { School, Shield } from "lucide-react";
 
 const schools = [
@@ -10,6 +10,7 @@ const schools = [
 ];
 
 export function TenantDiagram() {
+  const reduceMotion = useReducedMotion();
   return (
     <div className="rounded-2xl border bg-card p-8">
       <div className="relative mx-auto max-w-md">
@@ -24,7 +25,7 @@ export function TenantDiagram() {
               stroke="var(--primary)"
               strokeWidth={1.5}
               strokeOpacity={0.3}
-              initial={{ pathLength: 0 }}
+              initial={reduceMotion ? undefined : { pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -35,7 +36,7 @@ export function TenantDiagram() {
           {schools.map((s, i) => (
             <motion.div
               key={s.label}
-              initial={{ opacity: 0, y: -8 }}
+              initial={reduceMotion ? undefined : { opacity: 0, y: -8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
@@ -49,7 +50,7 @@ export function TenantDiagram() {
           ))}
         </div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={reduceMotion ? undefined : { opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}

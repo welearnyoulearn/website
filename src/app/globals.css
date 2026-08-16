@@ -202,7 +202,8 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-gradient,
   .animate-float,
-  .animate-pulse-glow {
+  .animate-pulse-glow,
+  .animate-ping {
     animation: none;
   }
 }

@@ -23,7 +23,7 @@ export default function FeaturesPage() {
       <Hero
         eyebrow="Live today"
         title="Every feature, in detail."
-        description="A glimpse isn't enough when you're evaluating a platform for your school — here's exactly how each part works."
+        description="A glimpse isn’t enough when you’re evaluating a platform for your school — here’s exactly how each part works."
         className="pb-16 sm:pb-20"
       />
 

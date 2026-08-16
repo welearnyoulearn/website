@@ -21,7 +21,7 @@ export default function ContactPage() {
       <Reveal>
         <SectionHeading
           eyebrow="Contact"
-          title="Let's talk"
+          title="Let’s talk"
           description="Whether you're evaluating the platform for your school or just have a question, we'll get back to you quickly."
         />
       </Reveal>

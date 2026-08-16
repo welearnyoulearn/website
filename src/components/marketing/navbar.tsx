@@ -82,7 +82,7 @@ export function Navbar() {
               "md:hidden"
             )}
           >
-            <Menu className="size-5" />
+            <Menu className="size-5" aria-hidden="true" />
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetHeader>

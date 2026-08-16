@@ -90,6 +90,7 @@ export function ContactForm() {
             type="email"
             required
             autoComplete="email"
+            spellCheck={false}
           />
         </div>
         <div className="space-y-2">
@@ -99,7 +100,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="c-reason">What's this about?</Label>
+        <Label htmlFor="c-reason">What&rsquo;s this about?</Label>
         <input type="hidden" name="intent" value={intent} />
         <Select
           value={intent}
@@ -127,7 +128,7 @@ export function ContactForm() {
         {status === "sending" ? "Sending…" : "Send message"}
       </Button>
       {status === "error" && (
-        <p className="text-sm text-destructive">
+        <p className="text-sm text-destructive" aria-live="polite">
           Something went wrong. Please try again or email us directly.
         </p>
       )}

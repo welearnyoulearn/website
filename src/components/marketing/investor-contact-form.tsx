@@ -69,6 +69,7 @@ export function InvestorContactForm() {
           type="email"
           required
           autoComplete="email"
+          spellCheck={false}
         />
       </div>
       <div className="space-y-2">
@@ -77,14 +78,14 @@ export function InvestorContactForm() {
           id="inv-message"
           name="message"
           rows={4}
-          placeholder="e.g. requesting the deck, a product walkthrough, or a call"
+          placeholder="e.g. requesting the deck, a product walkthrough, or a call…"
         />
       </div>
       <Button type="submit" disabled={status === "sending"} className="w-full">
         {status === "sending" ? "Sending…" : "Request deck / walkthrough"}
       </Button>
       {status === "error" && (
-        <p className="text-sm text-destructive">
+        <p className="text-sm text-destructive" aria-live="polite">
           Something went wrong. Please email us directly instead.
         </p>
       )}

@@ -87,7 +87,7 @@ const aiPoints = [
     title: "Weekly AI test generation",
     status: "Built, dormant",
     description:
-      "A scheduled job already generates an AI weekly MCQ test every Sunday — the student-facing screen to take it isn't live yet.",
+      "A scheduled job already generates an AI weekly MCQ test every Sunday — the student-facing screen to take it isn’t live yet.",
   },
   {
     title: "PDF syllabus extraction",
@@ -143,7 +143,7 @@ export default function InvestorsPage() {
       <Hero
         eyebrow="For investors"
         title="A production-grade platform, with a lot of shipped work still to unlock"
-        description="WeLearnYouLearn already runs five portals on one shared data model for Indian schools. Here's the technical case, honestly, including what's still ahead of us."
+        description="WeLearnYouLearn already runs five portals on one shared data model for Indian schools. Here’s the technical case, honestly, including what’s still ahead of us."
         glowClassName="bg-[radial-gradient(circle_at_70%_10%,theme(colors.brand-amber/.35),transparent_50%),radial-gradient(circle_at_10%_80%,theme(colors.primary/.3),transparent_45%)]"
       />
 
@@ -152,7 +152,7 @@ export default function InvestorsPage() {
         <RevealGroup className="grid grid-cols-2 gap-6 sm:grid-cols-4" stagger={0.1}>
           {stats.map((s) => (
             <RevealItem key={s.label} className="text-center">
-              <div className="text-3xl sm:text-4xl font-semibold tracking-tight text-primary">
+              <div className="text-3xl sm:text-4xl font-semibold tracking-tight text-primary tabular-nums">
                 <Counter value={s.value} />
               </div>
               <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
@@ -179,7 +179,7 @@ export default function InvestorsPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Technical differentiation"
-              title="What's actually underneath the product"
+              title="What’s actually underneath the product"
               align="left"
             />
           </Reveal>
@@ -245,7 +245,7 @@ export default function InvestorsPage() {
         <Reveal>
           <SectionHeading
             eyebrow="Honest roadmap"
-            title="What's next, and why it's a smaller lift than it looks"
+            title="What’s next, and why it’s a smaller lift than it looks"
             align="left"
           />
         </Reveal>
@@ -273,7 +273,7 @@ export default function InvestorsPage() {
           <p className="mt-14 max-w-2xl border-t pt-8 text-sm text-muted-foreground leading-relaxed">
             The pattern across nearly every &ldquo;not yet done&rdquo; item: the
             hard part — data model, backend logic, AI functions — is already
-            built. What's outstanding is largely UI wiring and third-party API
+            built. What&rsquo;s outstanding is largely UI wiring and third-party API
             connections.
           </p>
         </Reveal>

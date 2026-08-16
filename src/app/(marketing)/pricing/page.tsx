@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "Are WhatsApp reminders and online payments available right now?",
-    a: "The underlying infrastructure for both is built. We're finishing the live connections to our messaging and payments providers and will confirm availability with you directly before you're billed for either.",
+    a: "The underlying infrastructure for both is built. We’re finishing the live connections to our messaging and payments providers and will confirm availability with you directly before you’re billed for either.",
   },
   {
     q: "Can we switch plans later?",

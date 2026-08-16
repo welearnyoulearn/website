@@ -132,7 +132,7 @@ export default function AboutPage() {
 
       <CtaSection
         title="Want to see it in action?"
-        description="We're happy to walk you through the product, whichever side of it you're interested in."
+        description="We’re happy to walk you through the product, whichever side of it you’re interested in."
       />
     </>
   );

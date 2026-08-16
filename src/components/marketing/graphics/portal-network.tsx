@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 const nodes = [
   { label: "Admin", x: 260, y: 40, color: "var(--primary)" },
@@ -13,6 +13,7 @@ const nodes = [
 const center = { x: 260, y: 190 };
 
 export function PortalNetwork() {
+  const reduceMotion = useReducedMotion();
   return (
     <svg
       viewBox="0 0 520 380"
@@ -30,7 +31,7 @@ export function PortalNetwork() {
           stroke={n.color}
           strokeWidth={1.5}
           strokeOpacity={0.35}
-          initial={{ pathLength: 0, opacity: 0 }}
+          initial={reduceMotion ? undefined : { pathLength: 0, opacity: 0 }}
           whileInView={{ pathLength: 1, opacity: 0.35 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -43,26 +44,28 @@ export function PortalNetwork() {
         cy={center.y}
         r={30}
         fill="var(--primary)"
-        initial={{ scale: 0, opacity: 0 }}
+        initial={reduceMotion ? undefined : { scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         style={{ transformOrigin: `${center.x}px ${center.y}px` }}
       />
-      <motion.circle
-        cx={center.x}
-        cy={center.y}
-        r={30}
-        fill="none"
-        stroke="var(--primary)"
-        strokeWidth={1}
-        strokeOpacity={0.4}
-        initial={{ scale: 1, opacity: 0.4 }}
-        whileInView={{ scale: 1.6, opacity: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-        style={{ transformOrigin: `${center.x}px ${center.y}px` }}
-      />
+      {!reduceMotion && (
+        <motion.circle
+          cx={center.x}
+          cy={center.y}
+          r={30}
+          fill="none"
+          stroke="var(--primary)"
+          strokeWidth={1}
+          strokeOpacity={0.4}
+          initial={{ scale: 1, opacity: 0.4 }}
+          whileInView={{ scale: 1.6, opacity: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+          style={{ transformOrigin: `${center.x}px ${center.y}px` }}
+        />
+      )}
       <text
         x={center.x}
         y={center.y + 4}
@@ -76,7 +79,7 @@ export function PortalNetwork() {
       {nodes.map((n, i) => (
         <motion.g
           key={n.label}
-          initial={{ opacity: 0, scale: 0.6 }}
+          initial={reduceMotion ? undefined : { opacity: 0, scale: 0.6 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
