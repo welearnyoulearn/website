@@ -4,6 +4,7 @@ import { InvestorContactForm } from "@/components/marketing/investor-contact-for
 import { Hero } from "@/components/marketing/hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { Counter } from "@/components/motion/counter";
+import { TenantDiagram } from "@/components/marketing/graphics/tenant-diagram";
 import {
   Database,
   ShieldCheck,
@@ -170,13 +171,18 @@ export default function InvestorsPage() {
 
       {/* Tech differentiation — stacked rows with left rail, not a card grid */}
       <Section className="bg-muted/30">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Technical differentiation"
-            title="What's actually underneath the product"
-            align="left"
-          />
-        </Reveal>
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_320px]">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Technical differentiation"
+              title="What's actually underneath the product"
+              align="left"
+            />
+          </Reveal>
+          <Reveal delay={0.15} className="hidden lg:block">
+            <TenantDiagram />
+          </Reveal>
+        </div>
         <RevealGroup className="mt-14 divide-y border-t" stagger={0.08}>
           {techPoints.map((p) => (
             <RevealItem key={p.title}>

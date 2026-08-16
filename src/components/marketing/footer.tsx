@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const productLinks = [
   { href: "/product", label: "Product overview" },
-  { href: "/product#portals", label: "Portals" },
-  { href: "/product#syllabus", label: "Syllabus system" },
+  { href: "/features", label: "All features" },
+  { href: "/features/syllabus-tracking", label: "Syllabus tracking" },
   { href: "/pricing", label: "Pricing" },
 ];
 
@@ -19,9 +20,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div className="md:col-span-2 space-y-3">
-            <span className="text-lg font-semibold tracking-tight">
-              WeLearn<span className="text-primary">You</span>Learn
-            </span>
+            <Image
+              src="/logos/WLYL_website_logo_transparent.png"
+              alt="WeLearnYouLearn"
+              width={520}
+              height={155}
+              className="h-14 w-auto"
+            />
             <p className="max-w-sm text-sm text-muted-foreground">
               One platform for school admins, teachers, students and parents.
               Built for CBSE and State Board schools across India.

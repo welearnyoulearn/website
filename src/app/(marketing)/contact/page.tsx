@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Section, SectionHeading } from "@/components/marketing/section";
 import { ContactForm } from "@/components/marketing/contact-form";
 import { Reveal } from "@/components/motion/reveal";
+import { DotField } from "@/components/marketing/graphics/dot-field";
 import { Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Section className="pt-16 sm:pt-20">
+    <Section className="relative overflow-hidden pt-16 sm:pt-20">
+      <DotField className="pointer-events-none absolute -left-10 top-24 h-56 w-56 opacity-50" />
       <Reveal>
         <SectionHeading
           eyebrow="Contact"

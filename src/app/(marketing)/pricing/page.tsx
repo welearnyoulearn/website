@@ -3,6 +3,7 @@ import { Section, SectionHeading } from "@/components/marketing/section";
 import { PricingCard } from "@/components/marketing/pricing-card";
 import { CtaSection } from "@/components/marketing/cta-section";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { TierSteps } from "@/components/marketing/graphics/tier-steps";
 import {
   Accordion,
   AccordionContent,
@@ -26,6 +27,7 @@ const tiers = [
       "School Admin, Teacher, Student & Parent portals",
       "Syllabus subscription & coverage tracking",
       "Timetable, attendance & fee management",
+      "Expense management with audit trail",
       "Academic analytics & reporting",
       "Email support",
     ],
@@ -62,6 +64,7 @@ const comparisonRows = [
   { label: "Syllabus subscription & coverage tracking", basic: true, standard: true, premium: true },
   { label: "Timetable & attendance management", basic: true, standard: true, premium: true },
   { label: "Fee management (offline payment tracking)", basic: true, standard: true, premium: true },
+  { label: "Expense management & audit trail", basic: true, standard: true, premium: true },
   { label: "Academic & school-wide analytics", basic: true, standard: true, premium: true },
   { label: "WhatsApp messaging credits*", basic: false, standard: true, premium: true },
   { label: "Online fee payments*", basic: false, standard: true, premium: true },
@@ -93,14 +96,19 @@ export default function PricingPage() {
   return (
     <>
       <Section className="pb-0 sm:pb-0">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Pricing"
-            title="Plans built around how much of the platform you need"
-            description="All plans include the core portals and syllabus system. Higher tiers unlock messaging, payments and monitoring. Contact us for current pricing."
-            align="left"
-          />
-        </Reveal>
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Pricing"
+              title="Plans built around how much of the platform you need"
+              description="All plans include the core portals and syllabus system. Higher tiers unlock messaging, payments and monitoring. Contact us for current pricing."
+              align="left"
+            />
+          </Reveal>
+          <Reveal delay={0.15} className="hidden lg:block">
+            <TierSteps />
+          </Reveal>
+        </div>
       </Section>
 
       <Section>

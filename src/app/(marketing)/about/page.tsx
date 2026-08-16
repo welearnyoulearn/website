@@ -3,6 +3,7 @@ import { Section, SectionHeading } from "@/components/marketing/section";
 import { CtaSection } from "@/components/marketing/cta-section";
 import { Hero } from "@/components/marketing/hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { DotField } from "@/components/marketing/graphics/dot-field";
 import { Target, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -51,8 +52,9 @@ export default function AboutPage() {
       />
 
       {/* Mission — large pull-quote, not a card */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-4xl px-6">
+      <section className="relative overflow-hidden py-24 sm:py-32">
+        <DotField className="pointer-events-none absolute -right-8 -top-8 h-64 w-64 opacity-60" />
+        <div className="relative mx-auto max-w-4xl px-6">
           <Reveal>
             <p className="flex items-center gap-2 text-sm font-semibold text-primary">
               <span className="h-px w-4 bg-primary/50" />

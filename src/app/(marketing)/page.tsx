@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { CtaSection } from "@/components/marketing/cta-section";
 import { Hero } from "@/components/marketing/hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { PortalNetwork } from "@/components/marketing/graphics/portal-network";
 import {
   BookOpenCheck,
   Wallet,
+  Receipt,
   Fingerprint,
   HeartHandshake,
   Users,
@@ -45,13 +47,20 @@ const highlights = [
   },
   {
     n: "04",
+    icon: Receipt,
+    title: "Expense management",
+    description:
+      "Every school expense tracked, categorized and searchable, with bills attached and a full audit trail — no more lost paperwork.",
+  },
+  {
+    n: "05",
     icon: BookOpenCheck,
     title: "Syllabus organizing & tracking",
     description:
       "Subscribe to a shared curriculum library once — it flows automatically into teacher assignments and coverage tracking across the school.",
   },
   {
-    n: "05",
+    n: "06",
     icon: HeartHandshake,
     title: "Support you can rely on",
     description:
@@ -154,19 +163,24 @@ export default function HomePage() {
       {/* Live today — large index list, not a card grid */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-6">
-          <Reveal className="max-w-xl">
-            <p className="flex items-center gap-2 text-sm font-semibold text-primary">
-              <span className="h-px w-4 bg-primary/50" />
-              Live today
-            </p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-balance">
-              Everything that used to be manual, isn&apos;t anymore
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              No pilots, no half-built modules — these run your school&apos;s
-              daily operations right now.
-            </p>
-          </Reveal>
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
+            <Reveal className="max-w-xl">
+              <p className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <span className="h-px w-4 bg-primary/50" />
+                Live today
+              </p>
+              <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-balance">
+                Everything that used to be manual, isn&apos;t anymore
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                No pilots, no half-built modules — these run your school&apos;s
+                daily operations right now.
+              </p>
+            </Reveal>
+            <Reveal delay={0.15} className="hidden lg:block">
+              <PortalNetwork />
+            </Reveal>
+          </div>
 
           <RevealGroup className="mt-16 divide-y border-t" stagger={0.06}>
             {highlights.map((h) => (
