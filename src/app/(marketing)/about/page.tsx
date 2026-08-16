@@ -1,9 +1,11 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/marketing/section";
 import { CtaSection } from "@/components/marketing/cta-section";
 import { Hero } from "@/components/marketing/hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { DotField } from "@/components/marketing/graphics/dot-field";
+import { team } from "@/lib/team";
 import { Target, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -36,12 +38,6 @@ const values = [
     description:
       "Every school's data is isolated by design, and access control is reviewed as new features ship — not treated as a box to tick once.",
   },
-];
-
-const team = [
-  { name: "Founder name", role: "Founder & CEO" },
-  { name: "Team member", role: "Engineering" },
-  { name: "Team member", role: "Product" },
 ];
 
 export default function AboutPage() {
@@ -118,19 +114,20 @@ export default function AboutPage() {
         >
           {team.map((member) => (
             <RevealItem key={member.name} className="text-center">
-              <div className="mx-auto size-24 rounded-full bg-muted border-2 border-dashed flex items-center justify-center text-xs text-muted-foreground transition-transform hover:scale-105">
-                Photo
+              <div className="mx-auto size-28 overflow-hidden rounded-full ring-1 ring-border transition-transform hover:scale-105">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  width={112}
+                  height={112}
+                  className="size-full object-cover"
+                />
               </div>
               <p className="mt-4 font-medium">{member.name}</p>
               <p className="text-sm text-muted-foreground">{member.role}</p>
             </RevealItem>
           ))}
         </RevealGroup>
-        <Reveal delay={0.2}>
-          <p className="mt-8 text-center text-xs text-muted-foreground">
-            Team bios coming soon.
-          </p>
-        </Reveal>
       </Section>
 
       <CtaSection

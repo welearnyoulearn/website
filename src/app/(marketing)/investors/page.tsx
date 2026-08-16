@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/marketing/section";
 import { InvestorContactForm } from "@/components/marketing/investor-contact-form";
@@ -5,6 +6,7 @@ import { Hero } from "@/components/marketing/hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { Counter } from "@/components/motion/counter";
 import { TenantDiagram } from "@/components/marketing/graphics/tenant-diagram";
+import { team } from "@/lib/team";
 import {
   Database,
   ShieldCheck,
@@ -275,6 +277,30 @@ export default function InvestorsPage() {
             connections.
           </p>
         </Reveal>
+      </Section>
+
+      {/* Team */}
+      <Section className="bg-muted/30">
+        <Reveal>
+          <SectionHeading eyebrow="Team" title="Who's building this" align="left" />
+        </Reveal>
+        <RevealGroup className="mt-12 grid gap-8 sm:grid-cols-3" stagger={0.1}>
+          {team.map((member) => (
+            <RevealItem key={member.name} className="text-center">
+              <div className="mx-auto size-28 overflow-hidden rounded-full ring-1 ring-border">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  width={112}
+                  height={112}
+                  className="size-full object-cover"
+                />
+              </div>
+              <p className="mt-4 font-medium">{member.name}</p>
+              <p className="text-sm text-muted-foreground">{member.role}</p>
+            </RevealItem>
+          ))}
+        </RevealGroup>
       </Section>
 
       {/* Contact / deck request */}
