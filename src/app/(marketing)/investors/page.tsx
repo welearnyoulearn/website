@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   title: "For Investors",
   description:
     "Technical depth, market opportunity, and an honest roadmap for WeLearnYouLearn — a multi-tenant school management platform for Indian schools.",
+  alternates: { canonical: "/investors" },
+  openGraph: { url: "/investors" },
 };
 
 const stats = [

@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   title: "Pricing",
   description:
     "Three plans built around how much of the platform your school needs. Talk to us for current pricing.",
+  alternates: { canonical: "/pricing" },
+  openGraph: { url: "/pricing" },
 };
 
 const tiers = [

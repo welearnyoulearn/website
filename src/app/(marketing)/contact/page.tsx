@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with WeLearnYouLearn — request a demo, ask about pricing, or say hello.",
+  alternates: { canonical: "/contact" },
+  openGraph: { url: "/contact" },
 };
 
 export default function ContactPage() {

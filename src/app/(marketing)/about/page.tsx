@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "WeLearnYouLearn is building one shared platform for school admins, teachers, students and parents in India.",
+  alternates: { canonical: "/about" },
+  openGraph: { url: "/about" },
 };
 
 const values = [

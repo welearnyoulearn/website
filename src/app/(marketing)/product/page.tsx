@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   title: "Product — one platform for your whole school",
   description:
     "A quick look at the 5 portals, syllabus tracking, fee and expense management, and hardware-based teacher attendance — with a deep dive on every feature.",
+  alternates: { canonical: "/product" },
+  openGraph: { url: "/product" },
 };
 
 const glanceFeatures = [

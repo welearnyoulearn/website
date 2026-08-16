@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   title: "Features — every part of the platform, in detail",
   description:
     "How each part of WeLearnYouLearn works — the 5 portals, syllabus tracking, fee management, expense management, and hardware-based teacher attendance.",
+  alternates: { canonical: "/features" },
+  openGraph: { url: "/features" },
 };
 
 export default function FeaturesPage() {
