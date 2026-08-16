@@ -22,10 +22,11 @@ export function CtaSection({
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <div className="grain relative overflow-hidden rounded-3xl bg-wlyl-hero px-8 py-16 text-center sm:px-16">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 animate-gradient bg-[radial-gradient(circle_at_top,theme(colors.primary/.4),transparent_60%),radial-gradient(circle_at_bottom_right,theme(colors.brand-amber/.2),transparent_50%)]"
-            />
+            <div aria-hidden className="pointer-events-none absolute inset-0">
+              <div className="absolute -left-1/4 -top-1/2 size-[45vw] max-w-[520px] min-w-[280px] rounded-full bg-primary/45 blur-[100px] animate-float" />
+              <div className="absolute -right-1/4 -bottom-1/2 size-[40vw] max-w-[460px] min-w-[260px] rounded-full bg-brand-amber/30 blur-[100px] animate-pulse-glow" style={{ animationDelay: "-2s" }} />
+              <div className="absolute inset-0 bg-wlyl-hero/40" />
+            </div>
             <div className="relative">
               <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold tracking-tight text-white text-balance">
                 {title}

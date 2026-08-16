@@ -16,22 +16,41 @@ const item = {
   visible: { opacity: 1, y: 0, transition: spring },
 };
 
+const meshVariants = {
+  default: [
+    "absolute left-[6%] -top-1/4 size-[46vw] max-w-[560px] min-w-[340px] rounded-full bg-primary/45 blur-[110px] animate-float",
+    "absolute right-[10%] top-[8%] size-[38vw] max-w-[460px] min-w-[300px] rounded-full bg-wlyl-parent/35 blur-[110px] animate-pulse-glow",
+    "absolute bottom-[-30%] left-1/2 size-[50vw] max-w-[600px] min-w-[360px] rounded-full bg-brand-amber/22 blur-[120px] animate-float",
+  ],
+  warm: [
+    "absolute right-[8%] -top-1/4 size-[42vw] max-w-[520px] min-w-[320px] rounded-full bg-brand-amber/40 blur-[110px] animate-float",
+    "absolute -left-1/4 -top-1/3 size-[55vw] max-w-[680px] min-w-[400px] rounded-full bg-primary/40 blur-[110px] animate-pulse-glow",
+    "absolute bottom-[-25%] left-1/2 size-[45vw] max-w-[560px] min-w-[320px] rounded-full bg-wlyl-parent/25 blur-[120px] animate-float",
+  ],
+  cool: [
+    "absolute -left-1/4 -top-1/4 size-[60vw] max-w-[720px] min-w-[420px] rounded-full bg-wlyl-parent/40 blur-[110px] animate-float",
+    "absolute -right-1/4 -top-1/3 size-[50vw] max-w-[620px] min-w-[360px] rounded-full bg-primary/40 blur-[110px] animate-pulse-glow",
+    "absolute bottom-[-20%] left-1/2 size-[45vw] max-w-[560px] min-w-[320px] rounded-full bg-wlyl-teacher/20 blur-[120px] animate-float",
+  ],
+} as const;
+
 export function Hero({
   eyebrow,
   title,
   description,
   actions,
-  glowClassName,
+  variant = "default",
   className,
 }: {
   eyebrow?: string;
   title: ReactNode;
   description?: ReactNode;
   actions?: ReactNode;
-  glowClassName?: string;
+  variant?: keyof typeof meshVariants;
   className?: string;
 }) {
   const reduceMotion = useReducedMotion();
+  const blobs = meshVariants[variant];
 
   return (
     <section
@@ -40,16 +59,15 @@ export function Hero({
         className
       )}
     >
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className={blobs[0]} />
+        <div className={blobs[1]} style={{ animationDelay: "-2s" }} />
+        <div className={blobs[2]} style={{ animationDelay: "-4s" }} />
+        <div className="absolute inset-0 bg-wlyl-hero/40" />
+      </div>
       <div
         aria-hidden
-        className={cn(
-          "pointer-events-none absolute inset-0 animate-gradient bg-[radial-gradient(circle_at_30%_20%,theme(colors.primary/.55),transparent_55%),radial-gradient(circle_at_80%_10%,theme(colors.brand-amber/.28),transparent_45%)]",
-          glowClassName
-        )}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:64px_64px]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:64px_64px]"
       />
       <motion.div
         initial={reduceMotion ? undefined : "hidden"}

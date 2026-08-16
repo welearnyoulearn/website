@@ -46,7 +46,7 @@ export default function AboutPage() {
       <Hero
         title="One platform, built for schools first"
         description="WeLearnYouLearn started with a simple observation: schools juggle attendance registers, fee ledgers, and syllabus tracking across tools that don't talk to each other. We built one that does."
-        glowClassName="bg-[radial-gradient(circle_at_50%_0%,theme(colors.primary/.45),transparent_55%)]"
+        variant="cool"
       />
 
       {/* Mission — large pull-quote, not a card */}

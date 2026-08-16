@@ -144,7 +144,7 @@ export default function InvestorsPage() {
         eyebrow="For investors"
         title="A production-grade platform, with a lot of shipped work still to unlock"
         description="WeLearnYouLearn already runs five portals on one shared data model for Indian schools. Here’s the technical case, honestly, including what’s still ahead of us."
-        glowClassName="bg-[radial-gradient(circle_at_70%_10%,theme(colors.brand-amber/.35),transparent_50%),radial-gradient(circle_at_10%_80%,theme(colors.primary/.3),transparent_45%)]"
+        variant="warm"
       />
 
       {/* Stats */}
