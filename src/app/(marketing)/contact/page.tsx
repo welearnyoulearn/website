@@ -41,9 +41,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-sm font-medium">Email</p>
-                <p className="text-sm text-muted-foreground">
-                  hello@welearnyoulearn.com
-                </p>
+                <a
+                  href="mailto:admin@welearnyoulearn.com"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  admin@welearnyoulearn.com
+                </a>
               </div>
             </div>
           </div>
