@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "WeLearnYouLearn",
   shortName: "WLYL",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://about.welearnyoulearn.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://welcome.welearnyoulearn.com",
   description:
     "One platform for school admins, teachers, students and parents. Built for CBSE and State Board schools across India.",
   keywords: [
