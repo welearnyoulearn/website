@@ -78,7 +78,7 @@
 
   --destructive: #ef4444;
   --border: #e2e8f0;
-  --input: #e2e8f0;
+  --input: #cbd5e1;
   --ring: #4f46e5;
 
   --chart-1: #4f46e5;
@@ -130,7 +130,7 @@
 
   --destructive: #ef4444;
   --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
+  --input: rgba(255, 255, 255, 0.28);
   --ring: #6366f1;
 
   --chart-1: #818cf8;
