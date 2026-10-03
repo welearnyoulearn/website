@@ -37,7 +37,7 @@ export function Hero({
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-wlyl-hero",
+        "relative overflow-hidden bg-[#030D0B]",
         className
       )}
     >
