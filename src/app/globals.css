@@ -65,24 +65,24 @@
   --popover: #ffffff;
   --popover-foreground: #0f172a;
 
-  /* Primary — Indigo */
-  --primary: #4f46e5;
+  /* Primary — WLYL Deep Teal */
+  --primary: #0b5d52;
   --primary-foreground: #ffffff;
 
-  --secondary: #eef2ff;
-  --secondary-foreground: #4338ca;
+  --secondary: #e8f3f0;
+  --secondary-foreground: #0b5d52;
   --muted: #f1f5f9;
   --muted-foreground: #475569;
-  --accent: #fffbeb;
+  --accent: #fff8eb;
   --accent-foreground: #92400e;
 
   --destructive: #ef4444;
   --border: #e2e8f0;
   --input: #cbd5e1;
-  --ring: #4f46e5;
+  --ring: #0b5d52;
 
-  --chart-1: #4f46e5;
-  --chart-2: #f59e0b;
+  --chart-1: #0b5d52;
+  --chart-2: #f5a623;
   --chart-3: #10b981;
   --chart-4: #0ea5e9;
   --chart-5: #ef4444;
@@ -90,24 +90,24 @@
 
   --sidebar: #ffffff;
   --sidebar-foreground: #0f172a;
-  --sidebar-primary: #4f46e5;
+  --sidebar-primary: #0b5d52;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f1f5f9;
   --sidebar-accent-foreground: #0f172a;
   --sidebar-border: #e2e8f0;
-  --sidebar-ring: #4f46e5;
+  --sidebar-ring: #0b5d52;
 
-  /* Brand accents */
-  --brand-amber: #f59e0b;
-  --brand-amber-bg: #fffbeb;
+  /* Brand accents — exact WLYL palette */
+  --brand-amber: #f5a623;
+  --brand-amber-bg: #fff8eb;
   --success: #10b981;
-  --warning: #f59e0b;
+  --warning: #f5a623;
 
-  /* WLYL brand: portal accent colors (kept close to the neutral+indigo+amber system), hero background */
-  --wlyl-hero: #0f172a;
+  /* WLYL brand hero = brand teal; portal accents */
+  --wlyl-hero: #0b5d52;
   --wlyl-teacher: #10b981;
-  --wlyl-student: #f59e0b;
-  --wlyl-parent: #4338ca;
+  --wlyl-student: #f5a623;
+  --wlyl-parent: #1d6fa5;
 }
 
 .dark {
@@ -118,45 +118,45 @@
   --popover: #1e293b;
   --popover-foreground: #f8fafc;
 
-  --primary: #6366f1;
+  --primary: #1e9e8b;
   --primary-foreground: #ffffff;
 
-  --secondary: #1e293b;
-  --secondary-foreground: #eef2ff;
+  --secondary: #0d3d36;
+  --secondary-foreground: #a7e5dc;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --accent: #2a2210;
-  --accent-foreground: #fbbf24;
+  --accent: #2a1d08;
+  --accent-foreground: #f5a623;
 
   --destructive: #ef4444;
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.28);
-  --ring: #6366f1;
+  --ring: #1e9e8b;
 
-  --chart-1: #818cf8;
-  --chart-2: #fbbf24;
+  --chart-1: #1e9e8b;
+  --chart-2: #f5a623;
   --chart-3: #34d399;
   --chart-4: #38bdf8;
   --chart-5: #f87171;
 
   --sidebar: #1e293b;
   --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #6366f1;
+  --sidebar-primary: #1e9e8b;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #334155;
   --sidebar-accent-foreground: #f8fafc;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #6366f1;
+  --sidebar-ring: #1e9e8b;
 
-  --brand-amber: #fbbf24;
-  --brand-amber-bg: #2a2210;
+  --brand-amber: #f5a623;
+  --brand-amber-bg: #2a1d08;
   --success: #34d399;
-  --warning: #fbbf24;
+  --warning: #f5a623;
 
-  --wlyl-hero: #0a0f1e;
+  --wlyl-hero: #073d35;
   --wlyl-teacher: #34d399;
-  --wlyl-student: #fbbf24;
-  --wlyl-parent: #818cf8;
+  --wlyl-student: #f5a623;
+  --wlyl-parent: #3b8fd4;
 }
 
 @layer base {

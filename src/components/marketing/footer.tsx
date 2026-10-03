@@ -4,7 +4,9 @@ import Image from "next/image";
 const productLinks = [
   { href: "/product", label: "Product overview" },
   { href: "/features", label: "All features" },
-  { href: "/features/syllabus-tracking", label: "Syllabus tracking" },
+  { href: "/features/fee-management", label: "Fee management" },
+  { href: "/features/attendance", label: "Attendance tracking" },
+  { href: "/features/feedback-management", label: "Feedback management" },
   { href: "/pricing", label: "Pricing" },
 ];
 

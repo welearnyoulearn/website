@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { GeometricField } from "@/components/marketing/graphics/geometric-field";
+import { HeroIllustration } from "@/components/marketing/graphics/hero-illustration";
 
 const spring = { type: "spring" as const, stiffness: 170, damping: 20, mass: 0.8 };
 
@@ -41,11 +41,7 @@ export function Hero({
         className
       )}
     >
-      <GeometricField variant={variant} />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:64px_64px]"
-      />
+      <HeroIllustration />
       <motion.div
         initial={reduceMotion ? undefined : "hidden"}
         animate="visible"
@@ -54,16 +50,12 @@ export function Hero({
       >
         <div className="mx-auto max-w-3xl text-center">
           {eyebrow && (
-            <motion.span
+            <motion.p
               variants={item}
-              className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-white/85 shadow-lg shadow-black/10"
+              className="font-mono text-xs tracking-widest text-white/40 uppercase"
             >
-              <span className="relative flex size-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex size-1.5 rounded-full bg-emerald-400" />
-              </span>
               {eyebrow}
-            </motion.span>
+            </motion.p>
           )}
           <motion.h1
             variants={item}

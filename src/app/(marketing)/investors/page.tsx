@@ -207,7 +207,7 @@ export default function InvestorsPage() {
       </Section>
 
       {/* AI — dense list, not cards */}
-      <Section>
+      <Section id="ai">
         <Reveal>
           <SectionHeading
             eyebrow="AI"

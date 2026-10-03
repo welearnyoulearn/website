@@ -5,77 +5,32 @@ import { Section, SectionHeading } from "@/components/marketing/section";
 import { CtaSection } from "@/components/marketing/cta-section";
 import { Hero } from "@/components/marketing/hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
-import { HoverCard } from "@/components/motion/hover-card";
-import { PortalNetwork } from "@/components/marketing/graphics/portal-network";
+import { PortalShowcase } from "@/components/marketing/portal-showcase";
 import { features } from "@/lib/features";
-import { getFeatureAccent } from "@/lib/feature-accent";
 import {
   ArrowRight,
-  ArrowUpRight,
-  CalendarClock,
-  ClipboardCheck,
-  LineChart,
-  Megaphone,
-  Trophy,
-  MessageCircleQuestion,
   FileText,
-  Tv,
   BellRing,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Product — one platform for your whole school",
   description:
-    "A quick look at the 5 portals, syllabus tracking, fee and expense management, and hardware-based teacher attendance — with a deep dive on every feature.",
+    "A quick look at the 5 portals, syllabus tracking, fee and expense management, attendance, exam marks, announcements, feedback management, and the digital library.",
   alternates: { canonical: "/product" },
   openGraph: { url: "/product" },
 };
 
-const glanceFeatures = [
-  {
-    icon: CalendarClock,
-    title: "Timetable management",
-    description: "Auto-generate schedules, detect conflicts, swap periods.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Attendance",
-    description: "Per-class, per-session, works offline and syncs automatically.",
-  },
-  {
-    icon: LineChart,
-    title: "Academic analytics",
-    description: "Marks, attendance %, task completion, pass rate.",
-  },
-  {
-    icon: Megaphone,
-    title: "Announcements",
-    description: "Targeted by audience, with a dedicated TV-display mode.",
-  },
-  {
-    icon: Trophy,
-    title: "Rewards & leaderboard",
-    description: "Points-based ranking with badges and streaks.",
-  },
-  {
-    icon: MessageCircleQuestion,
-    title: "Doubt Center",
-    description: "Live chat, resolved doubts promotable to a class FAQ.",
-  },
+const remainingFeatures = [
   {
     icon: FileText,
     title: "Exams & marks",
-    description: "Track marks-entry status, publish with parent notification.",
-  },
-  {
-    icon: Tv,
-    title: "TV display & kiosk",
-    description: "No-login fullscreen display for lobbies.",
+    description: "Track marks-entry status per subject and exam. Publish results with parent notification — parents see marks the moment they're released.",
   },
   {
     icon: BellRing,
     title: "Notification center",
-    description: "Full send history for every announcement sent.",
+    description: "Full send history for every announcement and notification — searchable, filterable, and auditable. Nothing gets lost.",
   },
 ];
 
@@ -92,94 +47,95 @@ export default function ProductPage() {
             size="lg"
             render={<Link href="/features" />}
           >
-            Explore every feature
+            Explore every feature in detail
             <ArrowRight className="size-4" />
           </Button>
         }
       />
 
-      {/* Network glimpse */}
-      <section className="border-b py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal className="flex justify-center">
-            <PortalNetwork />
-          </Reveal>
+      {/* Quick stats */}
+      <section className="border-b">
+        <div className="mx-auto max-w-6xl px-6 py-10 sm:py-12">
+          <RevealGroup className="flex flex-wrap gap-x-12 gap-y-6" stagger={0.07}>
+            {[
+              { value: "5", label: "purpose-built portals" },
+              { value: "11+", label: "live feature modules" },
+              { value: "13", label: "AI functions built" },
+              { value: "2", label: "board curricula supported" },
+            ].map((s) => (
+              <RevealItem key={s.label}>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-semibold tracking-tight tabular-nums">{s.value}</span>
+                  <span className="text-sm text-muted-foreground">{s.label}</span>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
       </section>
 
-      {/* Flagship features — cards driving to detail pages */}
+      {/* Portal showcase — role by role */}
       <Section>
-        <Reveal>
+        <Reveal className="mb-12">
           <SectionHeading
-            eyebrow="Live today"
-            title="Five things that change how your school runs"
-            description="A quick look — click through to see exactly how each one works."
+            eyebrow="Every role covered"
+            title="What each person in your school gets"
+            description="Switch between portals below to see exactly what admins, teachers, students, and parents can do — all from the same shared platform."
             align="left"
           />
         </Reveal>
-        <RevealGroup className="mt-14 grid gap-5 sm:grid-cols-2" stagger={0.06}>
-          {features.map((f) => {
-            const accent = getFeatureAccent(f.accent);
-            return (
-              <RevealItem key={f.slug}>
-                <HoverCard className="h-full">
-                  <Link
-                    href={`/features/${f.slug}`}
-                    className="group flex h-full flex-col rounded-2xl border bg-card p-7 transition-shadow hover:shadow-xl hover:shadow-primary/5"
-                  >
-                    <div
-                      className={`flex size-11 items-center justify-center rounded-xl text-white ${accent.bg}`}
-                    >
-                      <f.icon className="size-5" />
-                    </div>
-                    <h3 className="mt-4 text-lg font-semibold">{f.name}</h3>
-                    <p className="mt-2 flex-1 text-sm text-muted-foreground leading-relaxed">
-                      {f.glimpse}
-                    </p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                      See how it works
-                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </span>
-                  </Link>
-                </HoverCard>
-              </RevealItem>
-            );
-          })}
-        </RevealGroup>
-        <Reveal delay={0.15} className="mt-10">
-          <Button variant="outline" render={<Link href="/features" />}>
-            View all features in detail
-            <ArrowRight className="size-4" />
-          </Button>
+        <Reveal delay={0.1}>
+          <PortalShowcase />
         </Reveal>
       </Section>
 
-      {/* At a glance — dense list, not the full story */}
+      {/* All features — editorial list */}
       <Section className="bg-muted/30">
         <Reveal>
           <SectionHeading
-            eyebrow="Also included"
-            title="Everything else a school day needs"
+            eyebrow="Live today"
+            title="Every module, in one place"
+            description="Click through to see exactly how each one works."
+            align="left"
           />
         </Reveal>
-        <RevealGroup
-          className="mt-14 grid divide-y border-t sm:grid-cols-2 sm:divide-x sm:divide-y-0"
-          stagger={0.04}
-        >
-          {glanceFeatures.map((f, i) => (
-            <RevealItem key={f.title}>
-              <div
-                className={`flex items-start gap-4 py-5 ${
-                  i % 2 === 0 ? "sm:pr-8" : "sm:pl-8"
-                } ${i >= 2 ? "sm:border-t" : ""}`}
+        <RevealGroup className="mt-12 divide-y border-t" stagger={0.04}>
+          {features.map((f, i) => (
+            <RevealItem key={f.slug}>
+              <Link
+                href={`/features/${f.slug}`}
+                className="group flex items-start gap-6 py-7 sm:items-baseline sm:gap-10"
               >
-                <f.icon className="mt-0.5 size-5 shrink-0 text-primary" />
-                <div>
-                  <h3 className="text-sm font-semibold">{f.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {f.description}
-                  </p>
+                <span className="w-7 shrink-0 font-mono text-xs text-muted-foreground/40 sm:pt-0 pt-0.5">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6">
+                  <span className="text-base font-semibold shrink-0">{f.name}</span>
+                  <span className="text-sm text-muted-foreground sm:truncate">{f.tagline}</span>
                 </div>
+                <span className="hidden shrink-0 text-muted-foreground/30 transition-all group-hover:text-foreground sm:inline">
+                  →
+                </span>
+              </Link>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </Section>
+
+      {/* Also included */}
+      <Section>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Also included"
+            title="More built into the platform"
+          />
+        </Reveal>
+        <RevealGroup className="mt-10 divide-y border-t" stagger={0.05}>
+          {remainingFeatures.map((f) => (
+            <RevealItem key={f.title}>
+              <div className="flex items-baseline gap-6 py-6">
+                <h3 className="w-48 shrink-0 text-sm font-semibold">{f.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
               </div>
             </RevealItem>
           ))}
@@ -187,13 +143,13 @@ export default function ProductPage() {
       </Section>
 
       {/* Pricing teaser */}
-      <Section>
+      <Section className="bg-muted/30">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             Every feature above is switchable per plan
           </h2>
           <p className="mt-3 text-muted-foreground">
-            See which features are included at each tier.
+            See which features are included at each tier — Basic, Standard, or Premium.
           </p>
           <Button className="mt-6" render={<Link href="/pricing" />}>
             View pricing
